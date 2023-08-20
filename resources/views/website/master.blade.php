@@ -129,7 +129,35 @@ function quanti() {//***Search For quantity *****
 }
 </script>
 
+<!-- for varcode to medin name -->
+<script>
+        $(document).on('change','#bar_code',function(){
+            var barCode =$(this).val();
+           $.ajax({
+            type:"GET",
+            url:"{{route('medicine.varcode')}}",
+            data:{id:barCode},
+            dataType:"JSON",
+            success:function(response){
+                var product=  $('#product');
+                product.empty();
+                //  $("#product").val(response);
+                // var option='';
+                // option +=' <option value="" >---seleced sub categoru-----</option>';
+                $.each(response,function(key,value){
+                  $("#product_id").val(value.id);
+                  $("#medicine").val(value.med_name);
+                  $("#avai_qty").val(value.quantity);
+                  $("#date_hidden").val(value.exp_date);
+                  $("#selling_price").val(value.selling_price);
+                });
+             
+              // subCategory.append(option);
+            }
 
+           })
+        });
+    </script>
 </body>
 
 

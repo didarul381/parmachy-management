@@ -51,10 +51,10 @@
                       <td>{{$medicien->selling_price}}</td>
                       <td>{{$medicien->profit_price}}</td>
                       <td>{{$medicien->quantity>1?"Avaibale":"Not"}}</td>
+                      
                       <td>
-                      <td>
-                      <a href="{{route('medicine.edit',['id'=>$medicien->id])}}" id="popup" data-bs-toggle="modal" data-bs-target="#exampleModal-2" ><button class="btn btn-info">Edit</button></a>
-                        <button class="btn btn-danger delete" id="{{$medicien->id}}"><span class="icon-trash"></td>
+                      <a href="{{route('medicine.edit',['id'=>$medicien->id])}}" class=" d-inline" id="popup" data-bs-toggle="modal" data-bs-target="#exampleModal-2" ><button class="btn btn-info d-inline">Edit</button></a>
+                        <button class=" mt-2 btn btn-danger delete d-inline" id="{{$medicien->id}}"><span class="icon-trash">Delete</button></td>
                       </td>
                      </tr>
                 @endforeach

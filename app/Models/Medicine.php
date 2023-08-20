@@ -27,6 +27,8 @@ class Medicine extends Model
     self ::$medicine->profit_price=$request->profit_price;
     self::$medicine->save();
 
+    return self::$medicine;
+
     }
 
     public static function updateMedicine($request,$id)
